@@ -238,7 +238,7 @@ function languagetool#Check(line1, line2) "{{{1
 
   let l:languagetool_cmd = exists("g:languagetool_cmd")
   \ ? g:languagetool_cmd
-  \ : l:languagetool_filter . ' ' . l:tmpfilename . ' | java -jar ' . s:languagetool_jar
+  \ : 'cat ' . l:tmpfilename . ' | ' . l:languagetool_filter . ' | java -jar ' . s:languagetool_jar
 
   let l:languagetool_cmd = l:languagetool_cmd
   \ . ' -c '    . s:languagetool_encoding
